@@ -1,11 +1,7 @@
-FROM ubuntu:16.04
-
-VOLUME /var/www/client
-VOLUME /var/www/backend
-VOLUME /var/www/frontend
+FROM businesstools/nginx-php:1.8.0
 
 RUN apt-get update
-RUN apt-get upgrade -y
+#RUN apt-get upgrade -y --allow-unauthenticated
 
 RUN apt-get install -y git zip
 RUN apt-get install -y imagemagick
@@ -13,8 +9,7 @@ RUN apt-get install -y curl
 RUN apt-get install -y wget
 RUN apt-get install -y xz-utils
 RUN apt-get install -y ca-certificates
-RUN apt-get install -y apache2
-RUN apt-get install -y nano
+RUN apt-get install -y vim
 
 # ffmpeg setup
 COPY ./build-ffmpeg.ubuntu.sh /usr/local/bin/build-ffmpeg
@@ -38,3 +33,5 @@ RUN apt-get install -y php7.0 \
 	php7.0-gd \
     php-xdebug \
     libapache2-mod-php7.0
+
+
