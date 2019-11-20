@@ -18,8 +18,11 @@ COPY ./build-ffmpeg.ubuntu.sh /usr/local/bin/build-ffmpeg
 RUN chmod +x /usr/local/bin/build-ffmpeg
 RUN build-ffmpeg
 
+ENV PHP_VERSION 7.1
+
 # install php
-RUN apt-get install -y php${PHP_VERSION} \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq --force-yes \
+        php${PHP_VERSION} \
 	php${PHP_VERSION}-common \
 	php${PHP_VERSION}-curl \
 	php${PHP_VERSION}-mcrypt \
