@@ -19,7 +19,7 @@ RUN chmod +x /usr/local/bin/build-ffmpeg
 RUN build-ffmpeg
 
 # install php
-RUN apt-get install -y php7.0 \
+RUN apt-get install -y php${PHP_VERSION} \
 	php${PHP_VERSION}-common \
 	php${PHP_VERSION}-curl \
 	php${PHP_VERSION}-mcrypt \
