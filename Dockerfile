@@ -10,9 +10,6 @@ RUN apt-get install -y zip \
     nano \
     imagemagick
 
-# install supervisor
-RUN apt-get install supervisor
-
 RUN apt-get install -y xz-utils
 RUN apt-get install -y ca-certificates
 
